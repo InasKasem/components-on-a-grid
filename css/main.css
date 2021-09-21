@@ -1,7 +1,8 @@
 html {
   box-sizing: border-box;
-  line-height: 1.5;
+  background-color: #f2f1ed;
   font-family: Georgia, serif;
+  line-height: 1.5;
 }
 
 *,
@@ -19,33 +20,14 @@ header {
   display: contents;
 }
 
-header img {
-  grid-area: header;
-  z-index: -1;
-}
-
-h1 {
-  grid-row: 2;
-  display: flex;
-  grid-column: 1;
-  width: 14rem;
-  margin: 1rem;
-  z-index: 100;
-}
-
 body {
-  display: grid;
-  background-color: #f2f1ed;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-
-    "header header"
-    "header header"
-    "main1 main2"
-    "main1 main2";
   margin: 0;
-  row-gap: 1rem;
-  column-gap: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  grid-template-areas:
+    "banner banner"
+    "column1 column2";
   padding: 1rem;
 }
 
@@ -53,67 +35,61 @@ main {
   display: contents;
 }
 
+.pano {
+  grid-area: banner;
+}
+
+.logo {
+  grid-column: 1;
+  grid-row: 1;
+  width: 14rem;
+  margin: 0 0 1rem 1rem;
+  z-index: 1;
+  align-self: end;
+}
+
+header img {
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+h2 {
+  font-family: "Patua One";
+  color: #30658d;
+}
+
 figure {
-  display: grid;
-  grid-template-areas:
-
-    "figure"
-    "caption";
-}
-
-main figure:nth-child(1) {
-  grid-area: main1;
-  width: 100%;
-  margin: 0;
-}
-
-main figure:nth-child(2) {
-  grid-area: main2;
-  width: 100%;
-  margin: 0;
-}
-
-main figure:nth-child(1) img {
-  grid-area: figure;
-  width: 100%;
-  margin: 0;
-  justify-content: center;
-}
-
-main figure:nth-child(2) img {
-  grid-area: figure;
-  width: 100%;
-  margin: 0;
-  justify-content: center;
-}
-
-nav ul {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  margin: 1rem;
 }
 
 nav {
-  grid-area: header;
-  grid-column: 2;
-  z-index: 1;
+  grid-column: 2 / -1;
+  grid-row: 1;
 }
 
-li a {
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+a {
   font-family: "Patua One", sans-serif;
   color: #fff;
   font-size: 2rem;
 }
 
 li {
-  list-style: none;
+  padding: 1rem;
 }
 
-h2 {
-  font-family: "Patua One", sans-serif;
-  color: #30658d;
-  margin-bottom: 0;
+figure:nth-child(1) {
+  grid-area: column1;
+  margin: 0;
 }
 
-p {
+figure:nth-child(2) {
+  grid-area: column2;
   margin: 0;
 }
