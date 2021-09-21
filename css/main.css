@@ -20,6 +20,8 @@ header {
 }
 
 header img {
+  grid-area: header;
+  z-index: -1;
 }
 
 h1 {
@@ -59,6 +61,32 @@ figure {
     "caption";
 }
 
+main figure:nth-child(1) {
+  grid-area: main1;
+  width: 100%;
+  margin: 0;
+}
+
+main figure:nth-child(2) {
+  grid-area: main2;
+  width: 100%;
+  margin: 0;
+}
+
+main figure:nth-child(1) img {
+  grid-area: figure;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+main figure:nth-child(2) img {
+  grid-area: figure;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
 nav ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -66,8 +94,8 @@ nav ul {
 
 nav {
   grid-area: header;
- grid-column: 2;
- z-index: 1;
+  grid-column: 2;
+  z-index: 1;
 }
 
 li a {
@@ -77,6 +105,7 @@ li a {
 }
 
 li {
+  list-style: none;
 }
 
 h2 {
